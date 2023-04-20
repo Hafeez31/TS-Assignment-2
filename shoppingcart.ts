@@ -27,6 +27,23 @@ const addProduct = () => {
   console.log("Product added successfully to the cart.");
 };
 
+// Function to remove product from cart
+const removeProduct = (id: number): Product[] => {
+  let isFound = false;
+  const filteredCart = cart.filter((product) => {
+    if (product.id === id) {
+      isFound = true;
+      console.log("Product removed from cart.");
+      return false;
+    }
+    return true;
+  });
+
+  if (!isFound) console.log("Product with given id, not found.");
+
+  return filteredCart;
+};
+
 
 let stop = false;
 while (!stop) {
