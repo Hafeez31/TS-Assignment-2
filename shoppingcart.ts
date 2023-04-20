@@ -10,6 +10,23 @@ interface Product {
 
 let cart: Product[] = [];
 
+// Function to add product to cart
+const addProduct = () => {
+  const productId = parseInt(prompt("Product ID: "));
+  const productName = prompt("Product Name: ");
+  const productQuantity = parseInt(prompt("Product Quantity: "));
+  const productPrice = parseInt(prompt("Product Price: "));
+
+  cart.push({
+    id: productId,
+    name: productName,
+    quantity: productQuantity,
+    price: productPrice,
+  });
+
+  console.log("Product added successfully to the cart.");
+};
+
 
 let stop = false;
 while (!stop) {
