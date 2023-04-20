@@ -68,6 +68,13 @@ const getCartList = () => {
 };
 
 
+// Function to calculate total price
+const calculateTotalPrice = () => {
+  return cart.reduce((total, product) => {
+    return total + product.price;
+  }, 0);
+};
+
 let stop = false;
 while (!stop) {
   console.log(
