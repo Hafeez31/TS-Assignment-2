@@ -45,6 +45,29 @@ const removeProduct = (id: number): Product[] => {
 };
 
 
+
+// Function to update quantity of product with given id
+const updateQuantity = (id: number): Product[] => {
+  let isUpdated = false;
+  const updatedCart = cart.map((product) => {
+    if (product.id === id) {
+      console.log("Current Quantity: ", product.quantity);
+      const newQuantity = parseInt(prompt("Product New Quantity: "));
+      product.quantity = newQuantity;
+      isUpdated = true;
+      console.log("Product quantity updated.");
+      return updatedCart;
+    }
+  });
+  if (!isUpdated) console.log("Product with given id, not found.");
+  return cart;
+};
+
+const getCartList = () => {
+  console.log(cart);
+};
+
+
 let stop = false;
 while (!stop) {
   console.log(
