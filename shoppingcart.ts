@@ -75,6 +75,25 @@ const calculateTotalPrice = () => {
   }, 0);
 };
 
+// Function to search products by name
+const searchByName = (name: string) => {
+  let isFound = false;
+  cart.map((product) => {
+    if (product.name === name) {
+      console.log("-----  Item Found!  -----");
+      console.log("Product Name: ", product.name);
+      console.log("Product ID: ", product.id);
+      console.log("Product Quantity: ", product.quantity);
+      console.log("Product Price: ", product.price);
+      console.log("-------------------------");
+
+      isFound = true;
+    }
+  });
+  if (!isFound) console.log("Product Not Found!");
+};
+
+
 let stop = false;
 while (!stop) {
   console.log(
